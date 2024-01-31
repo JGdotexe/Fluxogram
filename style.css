@@ -1,0 +1,26 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+}
+
+body {
+    background-color: #262626;
+}
+.subject {
+    display: flex;
+    border: 2px solid black;
+    width: 12rem;
+    text-align: center;
+    height: 6rem;
+    align-items: center;
+    justify-content: center;
+    margin: 2rem;
+    background-color: #fff;
+}
+
+#fluxograma {
+    display: flex;
+    flex-direction: row;
+}
