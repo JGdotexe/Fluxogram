@@ -8,19 +8,25 @@
 body {
     background-color: #262626;
 }
-.subject {
-    display: flex;
-    border: 2px solid black;
-    width: 12rem;
-    text-align: center;
-    height: 6rem;
-    align-items: center;
-    justify-content: center;
-    margin: 2rem;
-    background-color: #fff;
-}
 
 #fluxograma {
     display: flex;
     flex-direction: row;
+}
+
+.period {
+    display: flex;
+    flex-direction: column;
+}
+
+.subject {
+    border: 2px solid black;
+    width: 12rem;
+    height: 6rem;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin: 2rem;
+    background-color: #fff;
 }
