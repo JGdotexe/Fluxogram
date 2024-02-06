@@ -6,7 +6,7 @@
 }
 
 body {
-    /*background-color: #131313;*/
+    /*background-color: #1f1f1f;*/
     background-color: #242424;
 }
 
@@ -45,6 +45,7 @@ body {
     background-color: #808080;
     color: white;
     transition: .3s;
+    transform: translateY(-5px);
 }
 
 /*#p2::after {
