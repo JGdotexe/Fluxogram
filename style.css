@@ -25,7 +25,7 @@ body {
 
 .subject {
     color: white;
-    border: 1px solid #1f1f1f;
+    border: 1px solid #404040;
     width: 12rem;
     height: 6rem;
     display: flex;
@@ -36,11 +36,21 @@ body {
     /*background-color: #161616;*/
     background-color: #303030;
     border-radius: 10px;
+    box-shadow: 8px 8px 10px -6px rgba(0, 0, 0, 0.75);
 }
 
 .subject:hover {
     /*background-color: #1f1f1f;*/
-    background-color: #b0b0b0;
+    cursor: pointer;
+    background-color: #808080;
     color: white;
     transition: .3s;
 }
+
+/*#p2::after {
+    content: '';
+    position: absolute; top: 0; left: 50%;
+    border-top: 1px solid #b0b0b0;
+    width: 0;
+    height: 20px;
+}*/
