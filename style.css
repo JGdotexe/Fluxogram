@@ -48,10 +48,22 @@ body {
     transform: translateY(-10px);
 }
 
-/*#p2::after {
+.required {
+    border-color: red;
+}
+
+.unlock {
+    border-color: green;
+}
+
+.active {
+    border-color: blue;
+}
+
+/* #p2::after {
     content: '';
     position: absolute; top: 0; left: 50%;
     border-top: 1px solid #b0b0b0;
     width: 0;
     height: 20px;
-}*/
+} */

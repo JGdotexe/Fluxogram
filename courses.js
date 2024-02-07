@@ -1,5 +1,5 @@
-{
-    "FAC": {
+const courses = {
+    "fundamento_arquitetura_computadores": {
         "name": "Fundamentos de Arquitetura de Computadores",
         "code": "RCM 013",
         "type": "OB",
