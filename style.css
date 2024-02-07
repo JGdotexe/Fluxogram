@@ -42,10 +42,10 @@ body {
 .subject:hover {
     /*background-color: #1f1f1f;*/
     cursor: pointer;
-    background-color: #808080;
+    /*background-color: #808080;*/
     color: white;
     transition: .3s;
-    transform: translateY(-5px);
+    transform: translateY(-10px);
 }
 
 /*#p2::after {
