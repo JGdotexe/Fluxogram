@@ -1,4 +1,5 @@
 const courses = {
+    // Linha de arquitetura (Baixo Nível)
     "fundamento_arquitetura_computadores": {
         "name": "Fundamentos de Arquitetura de Computadores",
         "code": "RCM 013",
@@ -72,6 +73,8 @@ const courses = {
             "sistemas_operacionais"
         ]
     },
+
+    // Redes
     "redes_1": {
         "name": "Redes de Computadores 1",
         "code": "RCM 018",
@@ -93,6 +96,8 @@ const courses = {
             "redes_1"
         ]
     },
+
+    // Matemática para computação
     "matematica_discreta": {
         "name": "Matemática Discreta",
         "code": "RCN 044",
@@ -117,6 +122,8 @@ const courses = {
             "inteligencia_artificial"
         ]
     },
+
+    // Linha principal Programação
     "programacao_1": {
         "name": "Programação 1",
         "code": "RCM 002",
@@ -138,7 +145,7 @@ const courses = {
         ],
         "unlock": [
             "arquitetura_computadores",
-            "estrutura_de_dados",
+            "estrutura_dados",
             "paradigmas_programacao"
         ]
     },
@@ -156,7 +163,7 @@ const courses = {
             "compiladores"
         ]
     },
-    "estrutura_de_dados": {
+    "estrutura_dados": {
         "name": "Estrutura de Dados",
         "code": "RCM 004",
         "type": "OB",
@@ -169,7 +176,7 @@ const courses = {
             "analise_projeto_algoritmo",
             "interface_humano-computador",
             "inteligencia_artificial",
-            "engeharia_software_1",
+            "engenharia_software_1",
             "banco_dados",
             "liguagens_formais_teoria_computacao"
         ]
@@ -181,7 +188,7 @@ const courses = {
         "type": "OB",
         "CH": 64,
         "required": [
-            "estrutura_de_dados"
+            "estrutura_dados"
         ]
     },
     "algoritmo_grafos": {
@@ -190,16 +197,7 @@ const courses = {
         "type": "OB",
         "CH": 64,
         "required": [
-            "estrutura_de_dados"
-        ]
-    },
-    "interface_humano-computador": {
-        "name": "Interface Humano-Computador",
-        "code": "RCM 024",
-        "type": "OB",
-        "CH": 64,
-        "required": [
-            "estrutura_de_dados"
+            "estrutura_dados"
         ]
     },
     "liguagens_formais_teoria_computacao": {
@@ -208,7 +206,7 @@ const courses = {
         "type": "OB",
         "CH": 64,
         "required": [
-            "estrutura_de_dados"
+            "estrutura_dados"
         ],
         "unlock": [
             "compiladores"
@@ -227,14 +225,14 @@ const courses = {
 
 
 
-
+    // Linha projetos
     "banco_dados": {
         "name": "Banco de Dados",
         "code": "RCM 021",
         "type": "OB",
         "CH": 64,
         "required": [
-            "estrutura_de_dados"
+            "estrutura_dados"
         ],
         "unlock": [
             "projeto_arquitetura_software",
@@ -258,7 +256,7 @@ const courses = {
         "CH": 64,
         "required": [
             "paradigmas_programacao",
-            "estrutura_de_dados"
+            "estrutura_dados"
         ],
         "unlock": [
             "projeto_arquitetura_software"
@@ -280,7 +278,7 @@ const courses = {
         "CH": 64,
         "required": [
             "banco_dados",
-            "engeharia_software_1"
+            "engenharia_software_1"
         ],
         "unlock": [
             "engenharia_software_2"
@@ -294,5 +292,156 @@ const courses = {
         "required": [
             "projeto_arquitetura_software"
         ]
-    }
+    },
+
+
+    // Isoladas
+    "interface_humano-computador": {
+        "name": "Interface Humano-Computador",
+        "code": "RCM 024",
+        "type": "OB",
+        "CH": 64,
+        "required": [
+            "estrutura_dados"
+        ]
+    },
+    "inteligencia_artificial": {
+        "name": "Inteligência Artificial",
+        "code": "RCM 025",
+        "type": "OB",
+        "CH": 64,
+        "required": [
+            "logica_computacao",
+            "estrutura_dados",
+            "prob_est"
+        ]
+    },
+    "intro_ciencia_computacao": {
+        "name": "Introdução à Ciência da Computação",
+        "code": "RCM 001",
+        "type": "OB",
+        "CH": 32
+    },
+
+
+
+    // Linha matemática geral
+    "geomertica_analitica": {
+        "name": "Geometria Analítica e Cálculo Vetorial",
+        "code": "RCN 023",
+        "type": "OB",
+        "CH": 64,
+        "required": [],
+        "unlock": [
+            "algebra_linear"
+        ]
+    },
+    "algebra_linear": {
+        "name": "Álgebra Linear",
+        "code": "RCN 024",
+        "type": "OB",
+        "CH": 64,
+        "required": [
+            "geometria_analitica"
+        ],
+        "unlock": [
+            "metodos_numericos",
+            "computacao_grafica"
+        ]
+    },
+    "calculo_1": {
+        "name": "Cálculo Diferencial I",
+        "code": "RCN 063",
+        "type": "OB",
+        "CH": 96,
+        "required": [],
+        "unlock": [
+            "calculo_2"
+        ]
+    },
+    "calculo_2": {
+        "name": "Cálculo II",
+        "code": "RCN 020",
+        "type": "OB",
+        "CH": 64,
+        "required": [
+            "calculo_1"
+        ],
+        "unlock": [
+            "prob_est",
+            "metodos_numericos",
+            "fisica_1",
+            "fisica_3a",
+            "calculo_3"
+        ]
+    },
+    "calculo_3": {
+        "name": "Cálculo III",
+        "code": "RCN 021",
+        "type": "OB",
+        "CH": 64,
+        "required": [
+            "calculo_2"
+        ]
+    },
+    "metodos_numericos": {
+        "name": "Métodos Numéricos",
+        "code": "RCN 038",
+        "type": "OB",
+        "CH": 64,
+        "required": [
+            "calculo_2",
+            "programacao_1",
+            "algebra_linear"
+        ],
+        "unlock": [
+            "fisica_computacional"
+        ]
+    },
+    "prob_est": {
+        "name": "Probabilidade e Estatística",
+        "code": "RCN 037",
+        "type": "OB",
+        "CH": 64,
+        "required": [
+            "matematica_discreta",
+            "calculo_2"
+        ],
+        "unlock": [
+            "inteligencia_artificial"
+        ]
+    },
+    "fisica_1": {
+        "name": "Física I",
+        "code": "RCN 025",
+        "type": "OB",
+        "CH": 64,
+        "required": [
+            "calculo_2",
+            "fisica_3a"
+        ]
+    },
+    "fisica_3a": {
+        "name": "Física III",
+        "code": "RCN 059",
+        "type": "OB",
+        "CH": 64,
+        "required": [
+            "calculo_2",
+            "fisica_1"
+        ],
+        "correrequisite": [
+            "fisica_computacional"
+        ]
+    },
+    "fisica_computacional": {
+        "name": "Introdução a Física Computacional",
+        "code": "RCN 060",
+        "type": "OB",
+        "CH": 64,
+        "required": [
+            "metodos_numericos"
+        ]
+    },
+
 }
