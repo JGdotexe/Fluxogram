@@ -16,3 +16,16 @@
     - CSS: as materias vão ser selecionadas com um checkbox e vão mudar o background pra mais claro
 
 Quando a tiverem algumas matérias selecionadas e a pessoa clicar numa metéria *aleatória* la pra fente, acontecera a mudança de css como no segundo modo porém as matérias selecionadas **NÃO SERÃO PERDIDAS**.
+
+## TO DO:
+- [ ] Fazer Checkbox
+- [ ] Criar o estilo de uma materia quando selecionada
+- [ ] Mudar o estilo de uma materia quando clicada
+- [ ] Mostrar mais informações sobre a matéria ao click/hover
+
+
+
+### Design:
+- v-scroll and h-scroll OFF
+- zoom
+- 
