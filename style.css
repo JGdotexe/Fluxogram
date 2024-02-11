@@ -52,11 +52,19 @@ body {
     transform: translateY(-10px);
 }
 
+.finished {
+    background-color: yellow;
+}
+
+.unlocked {
+    background-color: green;
+}
+
 .required {
     border-color: red;
 }
 
-.unlock {
+.unlocks {
     border-color: green;
 }
 
