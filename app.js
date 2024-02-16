@@ -1,3 +1,4 @@
+// Algoritmo para clicar numa matéria e mostrar suas relações
 document.querySelectorAll(".subject").forEach(element => {
     element.addEventListener("click", () => {
         document.querySelectorAll(".active").forEach((oldActiveElement) => {
@@ -28,6 +29,8 @@ document.querySelectorAll(".subject").forEach(element => {
     })
 })
 
+// Algoritmo para marcar uma matéria concluída e mostrar quais estão disponíveis após ela
+// Código completamente errado, garbage, fazer do zero (deixei só para referencia de como usar algumas funções do JS)
 document.querySelectorAll(".subject").forEach(element => {
     element.addEventListener("change", () => {
         if (element.querySelector('input[type="checkbox"]').checked) {
@@ -48,8 +51,10 @@ document.querySelectorAll(".subject").forEach(element => {
     })
 })
 
-//transforma essa função de cima numa função de verdade poha, bagulho estranho, ainda por cima eu poderia usar ela na função que eu tava tentando fazer aqui embaixo, mas eu n sei como, se der pra fazer perdoe minha ignorância
-
+// Algoritmo para marcar todas as matérias de um período
+// Existem alguns detalhes que precisam ser resolvidos:
+// - Se marcar o checkAll, e depois desmarcar apenas uma matéria (coisa que os usuários vão fazer para ganhar tempo), o botão checkAll ainda continua marcado, mas ele deveria ser desmarcado (porém sem tirar o check das outras matérias)
+// - Se o usuário marcar todas as matérias manualmente, o botão checkAll deveria se marcar sozinho, essa é a mais trabalhosa e não é tão necessária, se quiser ignorar ela pode
 const checkAllCeckboxes = document.querySelectorAll('.check_all');
 
 checkAllCeckboxes.forEach(function(checkAllCeckboxes){
