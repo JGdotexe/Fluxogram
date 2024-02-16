@@ -47,3 +47,18 @@ document.querySelectorAll(".subject").forEach(element => {
         }
     })
 })
+
+//transforma essa função de cima numa função de verdade poha, bagulho estranho, ainda por cima eu poderia usar ela na função que eu tava tentando fazer aqui embaixo, mas eu n sei como, se der pra fazer perdoe minha ignorância
+
+const checkAllCeckboxes = document.querySelectorAll('.check_all');
+
+checkAllCeckboxes.forEach(function(checkAllCeckboxes){
+    checkAllCeckboxes.addEventListener('change', function() {
+        const periodContainer = checkAllCeckboxes.parentElement.parentElement;
+        const subjectCheckboxes = periodContainer.querySelectorAll('.checkbox');
+
+        subjectCheckboxes.forEach(function(checkbox){
+        checkbox.checked = checkAllCeckboxes.checked;
+       }) 
+    })
+})

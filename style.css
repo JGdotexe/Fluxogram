@@ -31,7 +31,7 @@ body {
     color: white;
     border: 1px solid #404040;
     width: 12rem;
-    height: 6rem;
+    height: 3.5rem;
     display: flex;  
     text-align: center;
     align-items: center;
@@ -39,8 +39,27 @@ body {
     margin: 1.4rem;
     /*background-color: #161616;*/
     background-color: #303030;
-    border-radius: 10px;
+    border-radius: 28px;
     box-shadow: 8px 8px 10px -6px rgba(0, 0, 0, 0.75);
+}
+
+.checkbox {
+    margin-left: 6px;
+}
+
+.check_period {
+    display: flex;  
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1.7rem;
+    color: white;
+}
+
+.check_period input[type="checkbox"] {
+    margin-top: 0.5rem;
+    transform: scale(1.5)
 }
 
 .subject:hover {
@@ -53,23 +72,27 @@ body {
 }
 
 .finished {
-    background-color: yellow;
+    /*background-color: #cbcbcb;*/
+    background-color: #1765a8;
+    transition: 0.5;
+    color: white;
+    /*box-shadow: 0 0 10px rgba(205, 203, 203, 0.5), 0 0 20px rgba(205, 203, 203, 0.3), 0 0 30px rgba(205, 203, 203, 0.2);*/
 }
 
 .unlocked {
-    background-color: green;
+    background-color: #449e48;
 }
 
 .required {
-    border-color: red;
+    border: 2px solid red;
 }
 
 .unlocks {
-    border-color: green;
+    border: 2px solid green;
 }
 
 .active {
-    border-color: blue;
+    border: 2px solid blue;
 }
 
 /* #p2::after {
