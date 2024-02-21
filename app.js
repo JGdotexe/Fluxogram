@@ -55,15 +55,41 @@ document.querySelectorAll(".subject").forEach(element => {
 // Existem alguns detalhes que precisam ser resolvidos:
 // - Se marcar o checkAll, e depois desmarcar apenas uma matéria (coisa que os usuários vão fazer para ganhar tempo), o botão checkAll ainda continua marcado, mas ele deveria ser desmarcado (porém sem tirar o check das outras matérias)
 // - Se o usuário marcar todas as matérias manualmente, o botão checkAll deveria se marcar sozinho, essa é a mais trabalhosa e não é tão necessária, se quiser ignorar ela pode
-const checkAllCeckboxes = document.querySelectorAll('.check_all');
+const checkAllCheckboxes = document.querySelectorAll('.check_all');
+const subjects = document.querySelectorAll('.subject');
+const checkboxes = document.querySelectorAll('.checkbox');
 
-checkAllCeckboxes.forEach(function(checkAllCeckboxes){
-    checkAllCeckboxes.addEventListener('change', function() {
-        const periodContainer = checkAllCeckboxes.parentElement.parentElement;
+checkAllCheckboxes.forEach(function(checkAllCheckbox) {
+    checkAllCheckbox.addEventListener('change', function() {
+        const periodContainer = checkAllCheckbox.parentElement.parentElement;
+        const periodSubjects = periodContainer.querySelectorAll('.subjects');
         const subjectCheckboxes = periodContainer.querySelectorAll('.checkbox');
 
-        subjectCheckboxes.forEach(function(checkbox){
-        checkbox.checked = checkAllCeckboxes.checked;
-       }) 
-    })
-})
+        subjectCheckboxes.forEach(function(subjectCheckbox) {
+            subjectCheckbox.checked = checkAllCheckbox.checked;
+        });
+/*         const checkboxes = document.querySelectorAll('.period .checkbox');
+
+            checkboxes.forEach(checkbox =>{
+                const parentPeriodId = checkbox.closest('.period').id;
+            }) */
+            
+        subjectCheckboxes.forEach(function(subjectCheckbox) {
+            const parentElement = subjectCheckbox.parentElement;
+            
+            if (subjectCheckbox.checked) {
+                parentElement.classList.add('finished');
+            } else {
+                    parentElement.classList.remove('finished');
+            }
+            
+            subjects.forEach(function(unlockElement) {
+                if (courses[subjectCheckbox.id].unlocks.includes(unlockElement.id)) {
+                    unlockElement.classList.add("unlocked");
+                } else {
+                    unlockElement.classList.remove("unlocked");
+                }
+            });
+        })
+    });
+});
