@@ -55,6 +55,7 @@ document.querySelectorAll(".subject").forEach(element => {
 // Existem alguns detalhes que precisam ser resolvidos:
 // - Se marcar o checkAll, e depois desmarcar apenas uma matéria (coisa que os usuários vão fazer para ganhar tempo), o botão checkAll ainda continua marcado, mas ele deveria ser desmarcado (porém sem tirar o check das outras matérias)
 // - Se o usuário marcar todas as matérias manualmente, o botão checkAll deveria se marcar sozinho, essa é a mais trabalhosa e não é tão necessária, se quiser ignorar ela pode
+
 const checkAllCheckboxes = document.querySelectorAll('.check_all');
 const subjects = document.querySelectorAll('.subject');
 const checkboxes = document.querySelectorAll('.checkbox');
@@ -76,20 +77,14 @@ checkAllCheckboxes.forEach(function(checkAllCheckbox) {
             
         subjectCheckboxes.forEach(function(subjectCheckbox) {
             const parentElement = subjectCheckbox.parentElement;
-            
+                
             if (subjectCheckbox.checked) {
                 parentElement.classList.add('finished');
             } else {
-                    parentElement.classList.remove('finished');
+                parentElement.classList.remove('finished');
             }
             
-            subjects.forEach(function(unlockElement) {
-                if (courses[subjectCheckbox.id].unlocks.includes(unlockElement.id)) {
-                    unlockElement.classList.add("unlocked");
-                } else {
-                    unlockElement.classList.remove("unlocked");
-                }
-            });
+
         })
     });
 });
