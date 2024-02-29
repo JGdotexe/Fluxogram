@@ -456,6 +456,9 @@ const courses = {
         "CH": 64,
         "required": [
             "calculo_2",
+        ],
+        "unlocks": [
+            "fisica_3a"
         ]
     },
     "fisica_3a": {
