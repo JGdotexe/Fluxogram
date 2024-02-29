@@ -9,7 +9,7 @@
      - `finished` - When the course is finished
      - `unlocked` - When the course is already unlocked
        - This will be calculed at each subject.checkbox.change event, and will be updated
-     - `locked` - When the course is not unlocked
+     <!-- - `locked` - When the course is not unlocked -->
        <!-- - `prerequisite` - When the course is a prerequisite  ---- There will be no `prerequisite` since you cant select a course you dont have -->
 2. The second is the "Click" the course you want to see the prerequisites and the courses it unlocks:
     - The prerequisites will be shown in a list
@@ -49,3 +49,8 @@
 ### Design Final:
 - v-scroll and h-scroll OFF
 - zoom
+
+### Features to add:
+- Progress bar/percentage
+- Subjects finished
+- Hours concluded

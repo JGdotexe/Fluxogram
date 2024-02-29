@@ -35,7 +35,7 @@ const courses = {
         "type": "OB",
         "CH": 32,
         "required": [
-            "FAC"
+            "fundamento_arquitetura_computadores"
         ],
         "correquisite": [
             "circuitos_digitais"
@@ -356,7 +356,7 @@ const courses = {
 
 
     // Linha matemática geral
-    "geomertica_analitica": {
+    "geometria_analitica": {
         "name": "Geometria Analítica e Cálculo Vetorial",
         "period": 1,
         "code": "RCN 023",
@@ -456,7 +456,6 @@ const courses = {
         "CH": 64,
         "required": [
             "calculo_2",
-            "fisica_3a"
         ]
     },
     "fisica_3a": {
@@ -481,7 +480,21 @@ const courses = {
         "CH": 64,
         "required": [
             "metodos_numericos"
+        ],
+        "correrequisite": [
+            "fisica_3a"
         ]
     },
+    "computacao_grafica" : {
+        "name": "Computação Gráfica",
+        "period": 5,
+        "code": "RCM 026",
+        "type": "OB",
+        "CH": 64,
+        "required": [
+            "estrutura_dados",
+            "algebra_linear"
+        ]
+    }
 
 }

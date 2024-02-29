@@ -2,11 +2,10 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Lato', sans-serif;
+    font-family: "Lato", sans-serif;
 }
 
 body {
-    /*background-color: #1f1f1f;*/
     background-color: #242424;
     justify-content: space-around;
 }
@@ -14,12 +13,6 @@ body {
 #fluxograma {
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    align-items: flex-center;
-    min-height: 50%;
-    max-height: 100%;
-    /*max-width: 100%;*/
-    min-width: none;    
 }
 
 .period {
@@ -32,7 +25,7 @@ body {
     border: 1px solid #404040;
     width: 12rem;
     height: 3.5rem;
-    display: flex;  
+    display: flex;
     text-align: center;
     align-items: center;
     justify-content: center;
@@ -48,7 +41,7 @@ body {
 }
 
 .check_period {
-    display: flex;  
+    display: flex;
     flex-direction: column;
     text-align: center;
     align-items: center;
@@ -59,16 +52,18 @@ body {
 
 .check_period input[type="checkbox"] {
     margin-top: 0.5rem;
-    transform: scale(1.5)
+    transform: scale(1.5);
 }
 
 .subject:hover {
-    /*background-color: #1f1f1f;*/
     cursor: pointer;
-    /*background-color: #808080;*/
     color: white;
-    transition: .3s;
+    transition: 0.3s;
     transform: translateY(-10px);
+}
+
+.unlocked {
+    background-color: #449e48;
 }
 
 .finished {
@@ -79,9 +74,9 @@ body {
     /*box-shadow: 0 0 10px rgba(205, 203, 203, 0.5), 0 0 20px rgba(205, 203, 203, 0.3), 0 0 30px rgba(205, 203, 203, 0.2);*/
 }
 
-.unlocked {
-    background-color: #449e48;
-}
+/* .locked {
+    background-color: red;
+} */
 
 .required {
     border: 2px solid red;
