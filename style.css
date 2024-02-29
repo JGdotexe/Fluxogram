@@ -37,8 +37,8 @@ body {
     align-items: center;
     justify-content: center;
     margin: 1.4rem;
-    /*background-color: #161616;*/
-    background-color: #303030;
+    background-color: #3a3a3a;
+    /* background-color: #303030; */
     border-radius: 28px;
     box-shadow: 8px 8px 10px -6px rgba(0, 0, 0, 0.75);
 }

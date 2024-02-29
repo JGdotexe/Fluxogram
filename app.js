@@ -63,28 +63,20 @@ const checkboxes = document.querySelectorAll('.checkbox');
 checkAllCheckboxes.forEach(function(checkAllCheckbox) {
     checkAllCheckbox.addEventListener('change', function() {
         const periodContainer = checkAllCheckbox.parentElement.parentElement;
-        const periodSubjects = periodContainer.querySelectorAll('.subjects');
         const subjectCheckboxes = periodContainer.querySelectorAll('.checkbox');
 
         subjectCheckboxes.forEach(function(subjectCheckbox) {
             subjectCheckbox.checked = checkAllCheckbox.checked;
         });
-/*         const checkboxes = document.querySelectorAll('.period .checkbox');
-
-            checkboxes.forEach(checkbox =>{
-                const parentPeriodId = checkbox.closest('.period').id;
-            }) */
-            
         subjectCheckboxes.forEach(function(subjectCheckbox) {
-            const parentElement = subjectCheckbox.parentElement;
-                
-            if (subjectCheckbox.checked) {
-                parentElement.classList.add('finished');
-            } else {
-                parentElement.classList.remove('finished');
-            }
-            
-
+          const parentElement = subjectCheckbox.parentElement;
+              
+          if (subjectCheckbox.checked) {
+              parentElement.classList.add('finished');
+          } else {
+              parentElement.classList.remove('finished'); 
+          }
         })
     });
 });
+
