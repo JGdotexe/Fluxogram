@@ -2,36 +2,6 @@ const allSubjectCheckbox = document.querySelectorAll(".checkbox");
 const checkAllPeriod = document.querySelectorAll(".check_all");
 const allSubject = document.querySelectorAll(".subject");
 
-// Algoritmo para clicar numa matéria e mostrar suas relações
-allSubject.forEach((element) => {
-    element.addEventListener("click", () => {
-        document.querySelectorAll(".active").forEach((oldActiveElement) => {
-            oldActiveElement.classList.remove("active");
-        });
-        document.querySelectorAll(".required").forEach((oldRequiredElement) => {
-            oldRequiredElement.classList.remove("required");
-        });
-        document.querySelectorAll(".unlocks").forEach((oldUnlockElement) => {
-            oldUnlockElement.classList.remove("unlocks");
-        });
-
-        element.classList.add("active");
-
-        document.querySelectorAll(".subject").forEach((relationElement) => {
-            if (courses[element.id].required) {
-                if (courses[element.id].required.includes(relationElement.id)) {
-                    relationElement.classList.add("required");
-                }
-            }
-            if (courses[element.id].unlocks) {
-                if (courses[element.id].unlocks.includes(relationElement.id)) {
-                    relationElement.classList.add("unlocks");
-                }
-            }
-        });
-    });
-});
-
 // Algoritmo para marcar uma matéria concluída e mostrar quais estão disponíveis após ela
 // Código ainda em desenvolvimento
 
@@ -96,5 +66,39 @@ allSubjectCheckbox.forEach((element) => {
         });
 
         periodContainer.querySelector(".check_all").checked = allChecked;
+    });
+});
+
+//Nova Função Exploration Mode
+// Adiciona o listener de clique para cada disciplina
+allSubject.forEach((subject) => {
+    subject.addEventListener('click', function(event) {
+        // Remove as classes de todos os elementos
+        allSubject.forEach((otherSubject) => {
+            otherSubject.classList.remove("active", "unlocks", "required");
+        });
+
+        // Adiciona as classes apenas à disciplina clicada
+        subject.classList.add("active", "unlocks", "required");
+
+        // Adiciona as classes relacionadas
+        document.querySelectorAll(".subject").forEach((relationElement) => {
+            if (courses[subject.id].required && courses[subject.id].required.includes(relationElement.id)) {
+                relationElement.classList.add("required");
+            }
+            if (courses[subject.id].unlocks && courses[subject.id].unlocks.includes(relationElement.id)) {
+                relationElement.classList.add("unlocks");
+            }
+        });
+
+        // Impede a propagação do clique para o body
+        event.stopPropagation();
+    });
+});
+// Adiciona o listener de clique para o body
+document.body.addEventListener('click', function() {
+    // Remove as classes de todos os elementos
+    allSubject.forEach((subject) => {
+        subject.classList.remove("active", "unlocks", "required");
     });
 });

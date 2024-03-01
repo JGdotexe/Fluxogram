@@ -69,7 +69,6 @@ body {
 .finished {
     /*background-color: #cbcbcb;*/
     background-color: #1765a8;
-    transition: 0.5;
     color: white;
     /*box-shadow: 0 0 10px rgba(205, 203, 203, 0.5), 0 0 20px rgba(205, 203, 203, 0.3), 0 0 30px rgba(205, 203, 203, 0.2);*/
 }
