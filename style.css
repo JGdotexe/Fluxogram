@@ -7,7 +7,7 @@
 
 body {
     background-color: #242424;
-    justify-content: space-around;
+    /* justify-content: space-around;  */ /*is this necessary? */
 }
 
 #fluxograma {
@@ -21,9 +21,10 @@ body {
 }
 
 .subject {
+    position: relative;
     color: white;
     border: 1px solid #404040;
-    min-width: 6rem;
+    min-width: 8rem;
     width: 12vw;
     max-width: 12rem;
     height: 5rem;
@@ -34,16 +35,15 @@ body {
     margin: 1.4rem;
     background-color: #3a3a3a;
     /* background-color: #303030; */
-    border-radius: 28px;
+    border-radius: 16px;
     box-shadow: 8px 8px 10px -6px rgba(0, 0, 0, 0.75);
 }
 
-/* .subject img {
+.subject img {
     position: absolute;
-    top: 0;
-    right: 0;
-    margin: 0;
-  } */ 
+    top: 0.5rem;
+    right: 0.5rem;
+}
 /* Fix this shit that gemini made */
 
 .checkbox {

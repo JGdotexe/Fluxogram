@@ -17,9 +17,6 @@
       - `required` - When the course is a prerequisite to the clicked one
       - `unlocks` - When the course is unlocked by the clicked course
 
-**Both will happen simultaneosly**
-
-<!-- Quando a tiverem algumas matérias selecionadas e a pessoa clicar numa metéria *aleatória* la pra fente, acontecera a mudança de css como no segundo modo porém as matérias selecionadas **NÃO SERÃO PERDIDAS**. -->
 
 ## Description ? : 
   - First Mode: 
@@ -36,12 +33,10 @@
 
 
 
-
-
 ## To Do : 
-- [ ] Tirar Checkbox
-- [ ] Mostrar mais informações sobre a matéria ao click/hover (decidir ainda)
-
+- [x] Tirar Checkbox
+- [ ] Mostrar mais informações sobre a matéria ao clicar no info
+- [ ] Adicionar modo "Exploration" ao clicar no info
 
 
 ### Design Final:
