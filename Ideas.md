@@ -2,16 +2,14 @@
 
 ## 2 modes:
 
-1. The first is the "Select" the courses you already have:
-   - Element will change to a clearer background whenever clicked
-   - Each will have a checkbox
+1. Progress Mode
+   - Element will change to a blue background
+   - Happens whenever the full div is clicked
    - Possible classes:
      - `finished` - When the course is finished
      - `unlocked` - When the course is already unlocked
        - This will be calculed at each subject.checkbox.change event, and will be updated
-     <!-- - `locked` - When the course is not unlocked -->
-       <!-- - `prerequisite` - When the course is a prerequisite  ---- There will be no `prerequisite` since you cant select a course you dont have -->
-2. The second is the "Click" the course you want to see the prerequisites and the courses it unlocks:
+2. Exploration Mode:
     - The prerequisites will be shown in a list
     - The courses it unlocks will be shown in a list
     - Possible classes:
@@ -23,7 +21,7 @@
 
 <!-- Quando a tiverem algumas matérias selecionadas e a pessoa clicar numa metéria *aleatória* la pra fente, acontecera a mudança de css como no segundo modo porém as matérias selecionadas **NÃO SERÃO PERDIDAS**. -->
 
-## To Do: 
+## Description ? : 
   - First Mode: 
     1. a ideia aqui é que ao clicar em qualquer matéria como concluido, ou desmarcar a mesma, todas as matérias que tem uma relação com a clicada (por exemplo Prog II libera ED e AC), vão ser recalculadas, ou seja, será feito uma rechecagem se as materias relacionais estarão disponíveis para serem feitas
     2. É necessário fazer isso pois não se pode liberar AC apenas fazendo Prog II, pois tbm é necessário Circuitos Digitais para fazer AC
@@ -37,11 +35,11 @@
     - Atualmente algumas matérias ficam totalmente escondidas em alguns formatos/tamanhos de tela, só aparecendo se usar um zoom ridículo de 50% ou menos, o que torna o texto ilegível, mas ai eu n faço ideia de como ajeitar
 
 
-## Styles To Do *NOW*: 
-- [x] Fazer Checkbox
-- [ ] Estilizar Checkbox
-- [ ] Estilizar uma materia quando selecionada
-- [ ] Estilizar uma materia quando clicada
+
+
+
+## To Do : 
+- [ ] Tirar Checkbox
 - [ ] Mostrar mais informações sobre a matéria ao click/hover (decidir ainda)
 
 
@@ -54,3 +52,5 @@
 - Progress bar/percentage
 - Subjects finished
 - Hours concluded
+- Save info in the browser cache
+- Add a "current semester" feature 
