@@ -1,7 +1,22 @@
-// Progress Mode
-// const allSubjectCheckbox = document.querySelectorAll(".checkbox");
+/* Constants (HTML elements) */
 const checkAllPeriod = document.querySelectorAll(".check_all");
 const allSubject = document.querySelectorAll(".subject");
+const allInfoButton = document.querySelectorAll(".info_button");
+const sidebar = document.getElementById("sidebar");
+
+
+/* Functions */
+function hideSidebar() {
+    sidebar.classList.add("hidden");
+}
+
+function hideExploration() {
+    allSubject.forEach((subject) => {
+        subject.classList.remove("active", "unlocks", "required");
+    });
+}
+
+/* Progress Mode */
 
 function unlockSubjects(subject) {
     if (courses[subject.id].unlocks) {
@@ -63,7 +78,9 @@ allSubject.forEach((subject) => {
     });
 });
 
-//Exploration Mode
+
+/* Exploration Mode */
+
 allSubject.forEach((subject) => {
     subject.addEventListener("mouseover", function (event) {
         // Remove as classes de todos os elementos
@@ -75,7 +92,7 @@ allSubject.forEach((subject) => {
         subject.classList.add("active", "unlocks", "required");
 
         // Adiciona as classes relacionadas
-        document.querySelectorAll(".subject").forEach((relationElement) => {
+        allSubject.forEach((relationElement) => {
             if (
                 courses[subject.id].required &&
                 courses[subject.id].required.includes(relationElement.id)
@@ -94,10 +111,60 @@ allSubject.forEach((subject) => {
         event.stopPropagation();
     });
 });
-// Adiciona o listener de clique para o body
-document.body.addEventListener("mouseover", function () {
-    // Remove as classes de todos os elementos
-    allSubject.forEach((subject) => {
-        subject.classList.remove("active", "unlocks", "required");
+
+
+/* SIDEBAR */
+
+allInfoButton.forEach((infoButton) => {
+    infoButton.addEventListener("click", function () {
+        const subject = courses[infoButton.parentElement.id];
+        sidebar.classList.remove("hidden");
+
+        sidebar.innerHTML = `
+            <p type="button" id="closeSidebarButton">X</p>
+            <h2>${subject.name}</h2>
+            <p>Período: ${subject.period}</p>
+            <p>Código: ${subject.code}</p>
+            <p>Tipo: ${subject.type}</p>
+            	
+            <ul>    
+                ${ 
+                    subject.required
+                        ? `<h4> Pré-requisitos: </h4>` +
+                          subject.required
+                              .map((required) => {
+                                  return `<li>${courses[required].name}</li>`;
+                              })
+                              .join("")
+                        : ``
+                }
+            </ul>
+            
+            <ul>
+                ${
+                    subject.unlocks
+                        ? `<h4> Desbloqueia: </h4>` +
+                          subject.unlocks
+                              .map((unlock) => {
+                                  return `<li>${courses[unlock].name}</li>`;
+                              })
+                              .join("")
+                        : ``
+                }
+            </ul>
+        `;
+
+        document
+            .getElementById("closeSidebarButton")
+            .addEventListener("click", hideSidebar);
+        event.stopPropagation();
     });
+});
+
+// Event listener to hide the sidebar when clicking outside
+document.body.addEventListener("click", function (event) {
+    if (!sidebar.contains(event.target)) {
+        hideSidebar();
+        hideExploration()
+    }
 });

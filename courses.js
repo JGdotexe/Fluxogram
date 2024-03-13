@@ -6,7 +6,6 @@ const courses = {
         "code": "RCM 013",
         "type": "OB",
         "CH": 64,
-        "required": [],
         "unlocks": [
             "circuitos_digitais",
             "lab_circuitos_digitais"
@@ -112,7 +111,6 @@ const courses = {
         "code": "RCN 044",
         "type": "OB",
         "CH": 64,
-        "required": [],
         "unlocks": [
             "logica_computacao",
             "prob_est"
@@ -140,7 +138,6 @@ const courses = {
         "code": "RCM 002",
         "type": "OB",
         "CH": 96,
-        "required": [],
         "unlocks": [
             "programacao_2",
             "metodos_numericos"
@@ -362,7 +359,6 @@ const courses = {
         "code": "RCN 023",
         "type": "OB",
         "CH": 64,
-        "required": [],
         "unlocks": [
             "algebra_linear"
         ]
@@ -387,7 +383,6 @@ const courses = {
         "code": "RCN 063",
         "type": "OB",
         "CH": 96,
-        "required": [],
         "unlocks": [
             "calculo_2"
         ]
@@ -498,6 +493,129 @@ const courses = {
             "estrutura_dados",
             "algebra_linear"
         ]
-    }
+    },
+    "tcc_1" : {
+        "name": "Projeto de Aplicação I-A",
+        "period": 7,
+        "code": "RCM 084",
+        "type": "OB",
+        "CH": 32,
+        // "required": [
+        //     "os 4 primeiros periodos",
+        // ],
+        "unlocks": [
+            "tcc_2",
+        ],
+    },
+    "tcc_2" : {
+        "name": "Projeto de Aplicação II-A",
+        "period": 8,
+        "code": "RCM 085",
+        "type": "OB",
+        "CH": 64,
+        "required": [
+            "tcc_1",
+        ],
+    },
+    "computacao_sociedade" : {
+        "name": "Computação e Sociedade I",
+        "period": 7,
+        "code": "RCM 082",
+        "type": "OB",
+        "CH": 64,
+        // "required": [
+            // "1440h",
+        // ]
+    },
+    "empreendedorismo" : {
+        "name": "Empreendedorismo",
+        "period": 7,
+        "code": "REG 001",
+        "type": "OB",
+        "CH": 32,
+        // "required": [
+            // "1440h",
+        // ]
+    },
+    "etica" : {
+        "name": "Ética",
+        "period": 8,
+        "code": "REG 057",
+        "type": "OB",
+        "CH": 32,
+        // "required": [
+            // "1440h",
+        // ]
+    },
+    "atividade_complementar" : {
+        "name": "Atividades Complementares",
+        "period": 8,
+        "code": "-",
+        "type": "AC",
+        "CH": 32,
+    },
+    "atividade_extensao" : {
+        "name": "Atividades Complementares de Extensão",
+        "period": 8,
+        "code": "-",
+        "type": "AC",
+        "CH": 32,
+    },
+    "optativa_1" : {
+        "name": "Optativa 1",
+        "period": 8,
+        "code": "-",
+        "type": "O",
+        "CH": 64,
+    },
+    "optativa_2" : {
+        "name": "Optativa 2",
+        "period": 8,
+        "code": "-",
+        "type": "O",
+        "CH": 64,
+    },
+    "optativa_3" : {
+        "name": "Optativa 3",
+        "period": 8,
+        "code": "-",
+        "type": "O",
+        "CH": 64,
+    },
+    "optativa_4" : {
+        "name": "Optativa 4",
+        "period": 8,
+        "code": "-",
+        "type": "O",
+        "CH": 64,
+    },
+    "proj_extensao_1" : {
+        "name": "Projeto de Extensão",
+        "period": 7,
+        "code": "-",
+        "type": "O",
+        "CH": 64,
+    },
+    "proj_extensao_2" : {
+        "name": "Projeto de Extensão",
+        "period": 7,
+        "code": "-",
+        "type": "O",
+        "CH": 64,
+    },
+    "proj_extensao_3" : {
+        "name": "Projeto de Extensão",
+        "period": 7,
+        "code": "-",
+        "type": "O",
+        "CH": 64,
+    },
+    "proj_extensao_4" : {
+        "name": "Projeto de Extensão",
+        "period": 7,
+        "code": "-",
+        "type": "O",
+        "CH": 64,
+    },
 
 }
