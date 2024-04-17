@@ -1,8 +1,12 @@
 /* Constants (HTML elements) */
-const checkAllPeriod = document.querySelectorAll(".check_all");
+const checkAllPeriod = document.querySelectorAll(".check_semester");
 const allSubject = document.querySelectorAll(".subject");
 const allInfoButton = document.querySelectorAll(".info_button");
 const sidebar = document.getElementById("sidebar");
+
+
+// Array of courses already taken
+let progressHistory = [];
 
 
 /* Functions */
@@ -16,7 +20,19 @@ function hideExploration() {
     });
 }
 
-/* Progress Mode */
+function updateCheckSemester(subject) {
+    const periodContainer = subject.parentElement;
+    const subjects = periodContainer.querySelectorAll(".subject");
+
+    let allChecked = Array.from(subjects).every((e) => {
+        return e.classList.contains("finished");
+    });
+
+    periodContainer.querySelector(".check_semester").checked = allChecked;
+}
+
+
+/* PROGRESS MODE */
 
 function unlockSubjects(subject) {
     if (courses[subject.id].unlocks) {
@@ -40,8 +56,12 @@ allSubject.forEach((subject) => {
     subject.addEventListener("click", () => {
         if (subject.classList.contains("finished")) {
             subject.classList.remove("finished");
+            progressHistory.splice(progressHistory.indexOf(subject.id), 1)
+            localStorage.setItem("progressHistory", JSON.stringify(progressHistory));
         } else {
             subject.classList.add("finished");
+            progressHistory.push(subject.id);
+            localStorage.setItem("progressHistory", JSON.stringify(progressHistory));
         }
         unlockSubjects(subject);
     });
@@ -55,31 +75,31 @@ checkAllPeriod.forEach(function (checkAllCheckbox) {
 
         subjects.forEach(function (subject) {
             if (checkAllCheckbox.checked) {
-                subject.classList.add("finished");
+                if (!subject.classList.contains("finished")) {
+                    subject.classList.add("finished");
+                    progressHistory.push(subject.id);
+                    localStorage.setItem("progressHistory", JSON.stringify(progressHistory));
+                }
             } else {
                 subject.classList.remove("finished");
+                progressHistory.splice(progressHistory.indexOf(subject.id), 1)
+                localStorage.setItem("progressHistory", JSON.stringify(progressHistory));
             }
             unlockSubjects(subject);
         });
     });
 });
 
-// Verifica se todas as matérias do período estão finalizadas, e marca o check_all se for, ou desmarca se não
+// Verifica se todas as matérias do período estão finalizadas, e marca o check_semester se for, ou desmarca se não
 allSubject.forEach((subject) => {
+    // subject.addEventListener("click", () => {
     subject.addEventListener("click", () => {
-        const periodContainer = subject.parentElement;
-        const subjects = periodContainer.querySelectorAll(".subject");
-
-        let allChecked = Array.from(subjects).every((e) => {
-            return e.classList.contains("finished");
-        });
-
-        periodContainer.querySelector(".check_all").checked = allChecked;
+        updateCheckSemester(subject);
     });
 });
 
 
-/* Exploration Mode */
+/* EXPLORATION MODE */
 
 allSubject.forEach((subject) => {
     subject.addEventListener("mouseover", function (event) {
@@ -168,3 +188,17 @@ document.body.addEventListener("click", function (event) {
         hideExploration()
     }
 });
+
+
+/* INITIALIZATION */
+
+// Load progress history from local storage
+if (localStorage.getItem("progressHistory")) {
+    progressHistory = JSON.parse(localStorage.getItem("progressHistory"));
+    progressHistory.forEach((subjectid) => {
+        let subject = document.getElementById(subjectid);
+        subject.classList.add("finished");
+        unlockSubjects(subject)
+        updateCheckSemester(subject)
+    });
+}

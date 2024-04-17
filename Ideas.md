@@ -18,21 +18,18 @@
         - `required` - When the course is a prerequisite to the clicked one
         - `unlocks` - When the course is unlocked by the clicked course
 
-## To Do :
+## Functions To Do :
 
--   [x] Tirar Checkbox
--   [ ] Mostrar mais informações sobre a matéria ao clicar no info
--   [ ] Adicionar modo "Exploration" ao clicar no info
+-   [ ] Create Readme.md
 
-### Style Changes:
+### Styles to change/add:
 
--   Customize scroll bar (for now)
--   checkbox
--   sidebar
+-   [ ] Customize scroll bar (for now)
+-   [ ] checkbox (check_semester)
+-   [ ] Sidebar
 
 ### Features to add:
 
--   Progress bar/percentage
+-   Progress bar/percentage (A progress in the bottom, that occupies 100% horizontally, maybe 20 or 30px of height, and goes from black to green when concluded)
 -   Hours concluded
--   Save info in the browser cache
 -   Add a "current semester" feature
