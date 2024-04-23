@@ -125,7 +125,7 @@ body {
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
+    /*align-items: center;*/
 
     position: fixed;
     top: 0%;
@@ -138,10 +138,10 @@ body {
     margin: 0;
     padding: 0;
 
-    background-color: #303030;
-    border: 4px solid #404040;
-    border-radius: 2rem 0 0 2rem;
-    
+    background-color: #242424;
+    border: 2px solid #454545;
+    /*border-radius: 2rem 0 0 2rem;*/
+    color: white;
 }
 
 #closeSidebarButton {
@@ -151,4 +151,51 @@ body {
     top: 2%;
     left: 98%;
     transform: translate(-100%, 0);
+}
+
+.sidebar h2{
+    text-align: center; 
+}
+
+.sidebar .sidebarContent .someInfo{
+    background-color: #3a3a3a;
+
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;   
+    
+    border-radius: 0.5rem;
+    padding: 10px;
+}
+
+.sidebar .sidebarContent .preRequisitos{
+    background-color: #3a3a3a;
+
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;   
+    
+    border-radius: 0.5rem;
+    padding: 10px;
+}
+
+.sidebar .sidebarContent .desbloqueia{
+    background-color: #3a3a3a;
+
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;   
+    
+    border-radius: 0.5rem;
+    padding: 10px;
+}
+
+.sidebar .sidebarContent ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar .sidebarContent li{
+    margin-top: 5px;
 }

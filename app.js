@@ -141,37 +141,43 @@ allInfoButton.forEach((infoButton) => {
         sidebar.classList.remove("hidden");
 
         sidebar.innerHTML = `
-            <p type="button" id="closeSidebarButton">X</p>
-            <h2>${subject.name}</h2>
-            <p>Período: ${subject.period}</p>
-            <p>Código: ${subject.code}</p>
-            <p>Tipo: ${subject.type}</p>
-            	
-            <ul>    
-                ${ 
-                    subject.required
-                        ? `<h4> Pré-requisitos: </h4>` +
-                          subject.required
-                              .map((required) => {
-                                  return `<li>${courses[required].name}</li>`;
-                              })
-                              .join("")
-                        : ``
-                }
-            </ul>
-            
-            <ul>
-                ${
-                    subject.unlocks
-                        ? `<h4> Desbloqueia: </h4>` +
-                          subject.unlocks
-                              .map((unlock) => {
-                                  return `<li>${courses[unlock].name}</li>`;
-                              })
-                              .join("")
-                        : ``
-                }
-            </ul>
+                <p type="button" id="closeSidebarButton">X</p>
+                <h2>${subject.name}</h2>
+            <div class="sidebarContent"> 
+                <div class="someInfo">
+                    <p>Período: ${subject.period}</p>
+                    <p>Código: ${subject.code}</p>
+                    <p>Tipo: ${subject.type}</p>
+                </div>
+                <div class="preRequisitos"> 
+                    <ul>    
+                        ${ 
+                            subject.required
+                                ? `<h4> Pré-requisitos: </h4>` +
+                                subject.required
+                                    .map((required) => {
+                                        return `<li>${courses[required].name}</li>`;
+                                    })
+                                    .join("")
+                                : ``
+                        }
+                    </ul>
+                </div>
+                <div class="desbloqueia"> 
+                    <ul>
+                        ${
+                            subject.unlocks
+                                ? `<h4> Desbloqueia: </h4>` +
+                                subject.unlocks
+                                    .map((unlock) => {
+                                        return `<li>${courses[unlock].name}</li>`;
+                                    })
+                                    .join("")
+                                : ``
+                        }
+                    </ul>
+                </div>
+            </div>
         `;
 
         document
