@@ -2,8 +2,9 @@
 const checkAllPeriod = document.querySelectorAll(".check_semester");
 const allSubject = document.querySelectorAll(".subject");
 const allInfoButton = document.querySelectorAll(".info_button");
+const progressBar = document.getElementById("progressBar");
 const sidebar = document.getElementById("sidebar");
-
+const totalHours = getTotalHours();
 
 // Array of courses already taken
 let progressHistory = [];
@@ -29,6 +30,37 @@ function updateCheckSemester(subject) {
     });
 
     periodContainer.querySelector(".check_semester").checked = allChecked;
+}
+
+function getConcludedHours() {
+    let temp = 0;
+    for (const element in courses) {
+        if (document.getElementById(element).classList.contains("finished")) {
+            temp += parseInt(courses[element].CH)
+        }
+    }
+    return temp 
+}
+
+function getTotalHours () {
+    let temp = 0;
+    for (const element in courses) {
+        temp += parseInt(courses[element].CH)
+    }
+    return temp 
+}
+
+function updateProgress() {
+    let concludedHours = getConcludedHours();
+    
+    const larguraTotal = document.documentElement.clientWidth;
+    const larguraConcluida = (concludedHours / totalHours) * larguraTotal;
+
+    progressBar.style.width = `${larguraConcluida}px`
+    progressBar.innerHTML = `<p>${concludedHours} / ${totalHours}</p>`
+
+
+
 }
 
 
@@ -64,6 +96,10 @@ allSubject.forEach((subject) => {
             localStorage.setItem("progressHistory", JSON.stringify(progressHistory));
         }
         unlockSubjects(subject);
+        // Atualiza barra de progresso e quantidade de horas concluidas 
+        updateProgress();
+        // Verifica se todas as matérias do período estão finalizadas, e marca o check_semester se for, ou desmarca se não
+        updateCheckSemester(subject);
     });
 });
 
@@ -87,17 +123,9 @@ checkAllPeriod.forEach(function (checkAllCheckbox) {
             }
             unlockSubjects(subject);
         });
+        updateProgress()
     });
 });
-
-// Verifica se todas as matérias do período estão finalizadas, e marca o check_semester se for, ou desmarca se não
-allSubject.forEach((subject) => {
-    // subject.addEventListener("click", () => {
-    subject.addEventListener("click", () => {
-        updateCheckSemester(subject);
-    });
-});
-
 
 /* EXPLORATION MODE */
 
@@ -141,7 +169,7 @@ allInfoButton.forEach((infoButton) => {
         sidebar.classList.remove("hidden");
 
         sidebar.innerHTML = `
-                <p type="button" id="closeSidebarButton">X</p>
+                <button type="button" id="closeSidebarButton">X</button>
                 <h2>${subject.name}</h2>
             <div class="sidebarContent"> 
                 <div class="someInfo">
@@ -195,6 +223,8 @@ document.body.addEventListener("click", function (event) {
     }
 });
 
+window.addEventListener('resize', updateProgress);
+
 
 /* INITIALIZATION */
 
@@ -208,3 +238,5 @@ if (localStorage.getItem("progressHistory")) {
         updateCheckSemester(subject)
     });
 }
+
+updateProgress();

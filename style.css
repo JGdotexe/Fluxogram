@@ -1,10 +1,11 @@
 /*
 UFF COLORS: 
-White: 
+White: ???
 Blue: #0058A9
 Blue2: #215CAA
 Yellow: #F6CF19
-Green: #0B6951
+Green: #0B6951 (this green ?)
+Green: #449e48 (OR this green ?)
 */
 
 * {
@@ -105,7 +106,7 @@ body {
 }
 
 .unlocks {
-    border: 2px solid green;
+    border: 2px solid #5ee265;
 }
 
 .active {
@@ -198,4 +199,17 @@ body {
 
 .sidebar .sidebarContent li{
     margin-top: 5px;
+}
+
+#progressBar {
+    position: fixed;
+    background-color: #449e48;
+    color: white;
+    /* width: 300px; */
+    font-size: 1rem;
+    height: 1rem;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
 }

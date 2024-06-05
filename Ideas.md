@@ -18,7 +18,7 @@
         - `required` - When the course is a prerequisite to the clicked one
         - `unlocks` - When the course is unlocked by the clicked course
 
-## Functions To Do :
+## To Do :
 
 -   [ ] Create Readme.md
 
